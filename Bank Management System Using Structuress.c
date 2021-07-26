@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 struct customer
 {
     int account_no;
@@ -7,11 +6,11 @@ struct customer
     int balance;
 };
 
-void accept(struct customer[], int);
-void display(struct customer[], int);
+int accept(struct customer[], int);
+int display(struct customer[], int);
 int search(struct customer[], int, int);
-void deposit(struct customer[], int, int, int);
-void withdraw(struct customer[], int, int, int);
+int deposit(struct customer[], int, int, int);
+int withdraw(struct customer[], int, int, int);
 
 int main()
 {
@@ -73,7 +72,7 @@ int main()
     return 0;
 }
 
-void accept(struct customer list[80], int s)
+int accept(struct customer list[80], int s)
 {
     int i;
     for (i = 0; i < s; i++)
@@ -89,7 +88,7 @@ void accept(struct customer list[80], int s)
     } 
 }
 
-void display(struct customer list[80], int s)
+int display(struct customer list[80], int s)
 {
     int i;
 
@@ -115,7 +114,7 @@ int search(struct customer list[80], int s, int number)
     return  - 1;
 }
 
-void deposit(struct customer list[], int s, int number, int amt)
+int deposit(struct customer list[], int s, int number, int amt)
 {
     int i = search(list, s, number);
     if (i ==  - 1)
@@ -128,7 +127,7 @@ void deposit(struct customer list[], int s, int number, int amt)
     }
 }
 
-void withdraw(struct customer list[], int s, int number, int amt)
+int withdraw(struct customer list[], int s, int number, int amt)
 {
     int i = search(list, s, number);
     if (i ==  - 1)
